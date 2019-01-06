@@ -4,7 +4,7 @@ Web Diary for creating a new entry on my daily endeavors each day.
 Todo List
 
 - Have an entry every day which includes:
-    - 5 Things I did during the day, paragraph for each.
+    - Atleast 3 Things I did during the day, paragraph describing each.
     - Favorite thing I did during the day, describe why it's my favorite.
     - Most productive thing I did during the day describe why I think so.
     - Least favorite thing OR Least productive thing and what I would change to improve on it next time.
@@ -23,3 +23,4 @@ Todo List
     - [ ] GET for getting daily entries
     - [ ] GET for getting entry comments
 
+- [ ] Write front end possibly in ReactJS or look at VueJS. (Maybe even vanilla JS)
