@@ -61,7 +61,6 @@ MongoClient.connect(url, {
             if (result && typeof callback === "function") callback(result);
         })
     };
-    
 
 
     app.use('/', express.static('public'));
@@ -74,9 +73,7 @@ MongoClient.connect(url, {
 
     app.post('/entries/new', (req, res) => {
         insertEntry(req.body, result => res.json(result));
-    })
-
-
+    });
 
 
     app.listen(port, () => console.log(`Server started on localhost:${port}`));

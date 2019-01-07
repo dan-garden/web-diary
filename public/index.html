@@ -1,15 +1,51 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Test HTML Page</title>
+    <title>Dan's Web Diary</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="main.js"></script>
-</head>
-<body>
-    
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 
-    
+    <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="js/turn.min.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+    <div class="flipbook-viewport">
+        <div class="container">
+            <div id="diary">
+                <div class="hard front">
+                    <h3>Dan's Diary</h3>
+                </div>
+                <div class="hard">
+                    <p>
+                        Welcome to my diary.
+                        Here I will write a daily entry that includes 5 things I did during the day and lists how productive I was during that day.
+                    </p>
+                </div>
+                <div><p>Page 1</p></div>
+                <div><p>Page 2</p></div>
+                <div><p>Page 3</p></div>
+                <div><p>Page 4</p></div>
+                <div class="hard"></div>
+                <div class="hard"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript">
+        $("#diary").turn({
+            width: 800,
+            height: 500,
+            autoCenter: true
+        });
+    </script>
 </body>
+
 </html>
