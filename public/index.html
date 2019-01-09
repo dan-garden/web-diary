@@ -15,35 +15,49 @@
 
 <body>
 
+
     <div class="flipbook-viewport">
         <div class="container">
             <div id="diary">
                 <div class="hard front">
                     <h3>Dan's Diary</h3>
+                    <h3>2019</h3>
                 </div>
                 <div class="hard">
+                    <h3>Welcome to my diary.</h3>
                     <p>
-                        Welcome to my diary.
-                        Here I will write a daily entry that includes 5 things I did during the day and lists how productive I was during that day.
+                        Here I will write a daily entry that includes 5 things I did during the day and lists how
+                        productive I was during that day.
+                    </p>
+                    <p style="text-align: center;">
+                        <br />
+                        <br />
+                        <br />
+                        <a href="create.html" class="entry-link">+ New Entry</a>
                     </p>
                 </div>
-                <div><p>Page 1</p></div>
-                <div><p>Page 2</p></div>
-                <div><p>Page 3</p></div>
-                <div><p>Page 4</p></div>
-                <div class="hard"></div>
-                <div class="hard"></div>
+
             </div>
         </div>
     </div>
 
 
+    <script>
+        const diary = $("#diary");
 
-    <script type="text/javascript">
-        $("#diary").turn({
+        diary.turn({
             width: 800,
-            height: 500,
+            height: 490,
             autoCenter: true
+        });
+
+
+        getEntries().then(entries => {
+            diary.turn("addPage", createBlankRightPage());
+            entries.forEach((entry) => {
+                diary.turn("addPage", createLeftPage(entry));
+                diary.turn("addPage", createRightPage(entry))
+            });
         });
     </script>
 </body>

@@ -14,13 +14,13 @@ Todo List
 
 
 
-- [ ] Setup Firebase OR MongoDB
+- [x] Setup Firebase OR MongoDB
 
 - [ ] Write node backend request routes using express.
     - [ ] POST for login
-    - [ ] POST for submitting daily entry
+    - [x] POST for submitting daily entry
     - [ ] POST For commenting on daily entry
-    - [ ] GET for getting daily entries
+    - [x] GET for getting daily entries
     - [ ] GET for getting entry comments
 
-- [ ] Write front end possibly in ReactJS or look at VueJS. (Maybe even vanilla JS)
+- [x] Write front end possibly in ReactJS or look at VueJS. (Maybe even vanilla JS)

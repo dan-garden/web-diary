@@ -65,6 +65,11 @@ MongoClient.connect(url, {
 
     app.use('/', express.static('public'));
 
+    app.get('/entries/clear', (req, res) => {
+        deleteAllEntries(result => {
+            res.json(result);
+        });
+    })
 
     app.get('/entries', (req, res) => {
         getEntries(result => res.json(result));

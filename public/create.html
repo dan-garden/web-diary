@@ -1,16 +1,58 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Dan's Web Diary - New Entry</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="js/widgety.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
 </head>
-<body>
-    
 
-    
+<body style="overflow: auto;">
+
+    <a href="/" class="diary-link">Goto Diary</a>
+
+
+    <form id="diary-entry">
+        <h3>Summary of my day</h3>
+        <textarea onkeyup="widget(this).updateSummary()" populate="summary" type="text" name="summary"></textarea>
+
+        <br />
+        <h3>Activities / Accomplishments</h3>
+        <div populate="activities" format='<div class="activity" data-activity-id="$activity_id">
+            <button onclick="widget(this).deleteActivity($activity_id)">Delete</button>
+            <label>Title</label><input data-type="title" onchange="widget(this).updateActivity(this);" type="text" value="$title"/>
+            <label>Location</label><input data-type="location" onchange="widget(this).updateActivity(this);" type="text" value="$location"/>
+            <textarea id="activity_$activity_id" data-type="body" onchange="widget(this).updateActivity(this)">$body</textarea>
+        </div>'></div>
+        <button onclick="widget(this).addActivity(this)">Add Activity</button>
+
+        <div id="types">
+            <h3>Favorite of the day</h3>
+            <select populate="activities" onchange="widget(this).updateTypeID(this)" name="favorite" format='<option class="select-type" value="$activity_id">$title (at $location)</option>'></select>
+            <br />
+            <label for="favorite-reason">Reason</label><span populate="favorite" format='<input onchange="widget(this).updateTypeReason(this);" type="text" name="favorite-reason" value="$reason"/>'></span>
+
+            <h3>Most productive of the day</h3>
+            <select populate="activities" onchange="widget(this).updateTypeID(this)" name="most_productive" format='<option class="select-type" value="$activity_id">$title (at $location)</option>'></select>
+            <br />
+            <label for="most-productive-reason">Reason</label><span populate="most_productive" format='<input onchange="widget(this).updateTypeReason(this);" type="text" name="most-productive-reason" value="$reason"/>'></span>
+
+            <h3>Least productive of the day</h3>
+            <select populate="activities" onchange="widget(this).updateTypeID(this)" name="least_productive" format='<option class="select-type" value="$activity_id">$title (at $location)</option>'></select>
+            <br />
+            <label for="least-productive-reason">Improvement</label><span populate="least_productive" format='<input onchange="widget(this).updateTypeReason(this);" type="text" name="least-productive-reason" value="$reason"/>'></span>
+        </div>
+
+        <button id="submit-button">Submit Entry</button>
+
+        </form>
+
+    <script src="js/diary-entry.js" type="text/javascript"></script>
+
 </body>
+
 </html>

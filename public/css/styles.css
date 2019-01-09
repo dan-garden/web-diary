@@ -1,18 +1,47 @@
 /* Basic sample */
 
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Gloria+Hallelujah|Indie+Flower|Shadows+Into+Light');
 
 
 * {
-    font-family: 'Indie Flower', cursive;
+    /* font-family: 'Indie Flower', cursive; */
+    /* font-family: 'Shadows Into Light', cursive; */
+    /* font-family: 'Dancing Script', cursive; */
+    font-family: 'Gloria Hallelujah', cursive;
 }
 
 
 body{
 	overflow:hidden;
-	background-color:#fcfcfc;
+	background-color:lightgrey;
 	margin:0;
 	padding:0;
+}
+
+.diary-link, .entry-link {
+	background-color: darkred;
+	color: yellow;
+	padding: 5px;
+	text-decoration: none;
+	border-radius: 10px;
+	border: solid 2px black;
+	cursor: pointer;
+}
+
+.diary-link:hover, .entry-link:hover {
+	background-color: maroon;
+}
+
+.diary-link {
+	position: absolute;
+	z-index: 1000;
+	top: 5px;
+	left: 5px;
+}
+
+.entry-link {
+	margin: auto;
+	margin-top: 10px;
 }
 
 
@@ -32,15 +61,26 @@ body{
 .flipbook-viewport #diary{
 	width:922px;
 	height:600px;
-	left:-461px;
-	top:-300px;
+	left:-400px;
+	top:-245px;
 }
+
 
 .flipbook-viewport .page{
 	width:461px;
 	height:600px;
 	background-repeat:no-repeat;
 	background-size:100% 100%;
+}
+
+#diary .page h1,
+#diary .page h2,
+#diary .page h3,
+#diary .page h4,
+#diary .page h5,
+#diary .page h6 {
+    text-align: center;
+    font-weight: bold;
 }
 
 #diary .page{
@@ -57,8 +97,8 @@ body{
 }
 
 #diary .front h3 {
-    text-align: center;
     font-size: 50px;
+    color: #FFB433;
 }
 
 #diary .page.even {
@@ -95,10 +135,119 @@ body{
 	-moz-transition: -moz-box-shadow 0.5s;
 	-o-transition: -webkit-box-shadow 0.5s;
 	-ms-transition: -ms-box-shadow 0.5s;
-
+/* 
 	-webkit-box-shadow:0 0 20px #ccc;
 	-moz-box-shadow:0 0 20px #ccc;
 	-o-box-shadow:0 0 20px #ccc;
 	-ms-box-shadow:0 0 20px #ccc;
-	box-shadow:0 0 20px #ccc;
+	box-shadow:0 0 20px #ccc; */
+}
+
+
+
+#diary-entry {
+	margin: auto;
+	text-align: center;
+	width: 100%;
+	max-width: 800px;
+	margin-top: 10px;
+	background-image: url(../images/new-entry-form.jpg);
+	box-sizing: border-box;
+	padding: 30px;
+	border-radius: 20px;
+	max-height: 900px;
+	overflow-y: auto;
+	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+#diary-entry h3 {
+	margin-bottom: 5px;
+}
+
+#diary-entry textarea {
+	width: 100%;
+	height: 128px;
+	font-size: 14px;
+	box-sizing: border-box;
+	padding: 5px;
+	background-color: rgba(255, 255, 255, 0.3);
+	border-radius: 10px;
+	border: none;
+}
+
+#diary-entry textarea:focus {
+	outline: none;
+}
+
+#diary-entry [name='summary'] {
+	height: 80px;
+}
+
+#diary-entry .activity {
+	background-color: rgba(0, 0, 0, 0.1);
+	box-sizing: border-box;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+#diary-entry .activity label {
+	margin-right: 10px;
+	margin-left: 20px;
+}
+
+#diary-entry .activity button { 
+	border-radius: 10px 10px 0 0;
+	padding: 0 10px;
+}
+
+button {
+	background: darkred;
+	color: yellow;
+	border: none;
+	cursor: pointer;
+	border-radius: 10px;
+	padding: 5px 10px;
+}
+
+button:hover {
+	background: maroon;
+}
+
+#diary-entry .activity textarea {
+	background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+#diary-entry .activity input {
+	padding-left: 10px;
+	border-radius: 10px 10px 0 0;
+	background-color: rgba(255, 255, 255, 0.3) !important;
+	border: solid 2px rgba(0, 0, 0, 0.2);
+	border-bottom: none;
+}
+
+#types select {
+	width: 100%;
+	max-width: 300px;
+	margin-bottom: 5px;
+	padding: 10px;
+	background-color: rgba(255, 255, 255, 0.3);
+	border-radius: 10px;
+}
+
+#types label {
+	margin-right: 10px;
+}
+
+#types input {
+	width: calc(100% - 145px);
+	margin-bottom: 5px;
+	padding: 10px;
+	background-color: rgba(255, 255, 255, 0.3);
+	border: solid 2px rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+}
+
+
+#submit-button {
+	font-size: 20px;
 }
