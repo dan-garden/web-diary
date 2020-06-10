@@ -40,6 +40,7 @@ const createSummaryDom = summary => {
     const summaryDom = document.createElement('p');
     summaryDom.classList.add('summary');
     summaryDom.innerHTML = summary;
+    summaryDom.setAttribute('contenteditable', true);
     return summaryDom;
 };
 
@@ -48,7 +49,7 @@ const createActivityDom = activity => {
     if(activity) {
         const activityDom = document.createElement('p');
         activityDom.classList.add('activity');
-        activityDom.innerHTML = activity.body;
+        activityDom.innerHTML = activity.body.substring(0, 120);
         return activityDom;
     } else {
         return false;

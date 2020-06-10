@@ -70,7 +70,9 @@ registerWidget({
 
     submit() {
         this.state.date = new Date().toISOString();
-        createEntry(this.state, result => console.log(result));
+        createEntry(this.state, result => {
+            document.location = '/?entry='+result
+        });
     },
 
     state: {
